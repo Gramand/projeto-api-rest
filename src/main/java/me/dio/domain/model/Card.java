@@ -1,10 +1,11 @@
-package me.dio.projeto_api_rest.domain.model;
+package me.dio.domain.model;
 
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
-@Entity(name = "tb_account")
-class Account {
+
+@Entity(name = "tb_card")
+class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -12,16 +13,10 @@ class Account {
     @Column(unique = true)
     private String number;
 
-    private String agency;
-
-    @Column(precision = 13, scale = 2)
-    private BigDecimal balance;
-
-    @Column(name = "additional_limit", precision = 13, scale = 2)
+    @Column(name = "available_limit", precision = 13, scale = 2)
     private BigDecimal limit;
 
     // Getters e Setters
-
     public Long getId() {
         return id;
     }
@@ -36,22 +31,6 @@ class Account {
 
     public void setNumber(String number) {
         this.number = number;
-    }
-
-    public String getAgency() {
-        return agency;
-    }
-
-    public void setAgency(String agency) {
-        this.agency = agency;
-    }
-
-    public BigDecimal getBalance() {
-        return balance;
-    }
-
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
     }
 
     public BigDecimal getLimit() {
