@@ -1,9 +1,20 @@
-package me.dio.projeto_api_rest;
+package me.dio.projeto_api_rest.domain.model;
 
+import jakarta.persistence.*;
+
+import java.math.BigDecimal;
+
+@Entity(name = "tb_card")
 class Card {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(unique = true)
     private String number;
-    private float limit;
+
+    @Column(name = "available_limit", scale = 13, precision = 2)
+    private BigDecimal limit;
 
     // Getters e Setters
     public Long getId() {
@@ -22,11 +33,11 @@ class Card {
         this.number = number;
     }
 
-    public float getLimit() {
+    public BigDecimal getLimit() {
         return limit;
     }
 
-    public void setLimit(float limit) {
+    public void setLimit(BigDecimal limit) {
         this.limit = limit;
     }
 }

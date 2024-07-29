@@ -5,7 +5,7 @@ API RESTful Java utilizando Spring e afins
 
 ```mermaid
 classDiagram
-    class User {
+    class me.dio.projeto_api_rest.domain.model.User {
         name: String
         account: Account
         features: Feature[]
@@ -35,9 +35,9 @@ classDiagram
         description: String
     }
 
-    User "1" *-- "1" Account
-    User "1" *-- "N" Feature
-    User "1" *-- "1" Card
-    User "1" *-- "N" News
+    me.dio.projeto_api_rest.domain.model.User "1" *-- "1" Account
+    me.dio.projeto_api_rest.domain.model.User "1" *-- "N" Feature
+    me.dio.projeto_api_rest.domain.model.User "1" *-- "1" Card
+    me.dio.projeto_api_rest.domain.model.User "1" *-- "N" News
 
 ```
