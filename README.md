@@ -5,8 +5,12 @@ API RESTful Java utilizando Spring e afins
 
 ```mermaid
 classDiagram
-    class Customer {
+    class User {
         name: String
+        account: Account
+        features: Feature[]
+        card: Card
+        news: News[]
     }
 
     class Account {
